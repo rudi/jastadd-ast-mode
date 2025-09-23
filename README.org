@@ -9,8 +9,7 @@ This mode provides light support for editing of JastAdd AST definition files
 for the Emacs editor.  Currently, this means syntax highlighting, comment
 support and navigation to definitions via imenu.
 
-Note that this mode does not implement support for =jadd= and =jrag= files;
-the Java mode(s) provided by Emacs work ok for these file types.
+Note that this mode only handles =.ast= files; to edit =.jadd= and =.jrag= files, check out [[https://github.com/lu-cs-sde/jastadd-mode][jastadd-mode]].
 
 ** Installation
 
