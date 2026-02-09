@@ -78,6 +78,8 @@
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.ast\\'" . jastadd-ast-mode) t)
 
+(declare-function speedbar-add-supported-extension "speedbar" (extension))
+
 ;;;###autoload
 (with-eval-after-load 'speedbar
   (speedbar-add-supported-extension ".ast"))
