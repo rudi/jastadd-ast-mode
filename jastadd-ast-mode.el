@@ -1,4 +1,4 @@
-;;; jastadd-ast-mode.el --- Major mode for editing JastAdd AST files
+;;; jastadd-ast-mode.el --- Major mode for editing JastAdd AST files  -*- lexical-binding: t; -*-
 
 ;; Copyright (c) 2016 Rudi Schlatte <rudi@constantly.at>
 
@@ -73,15 +73,14 @@
   (setq font-lock-defaults '(jastadd-ast--font-lock-defaults))
 
   (setq imenu-generic-expression jastadd-ast--imenu-generic-expression)
-  (imenu-add-menubar-index)
-  (if (featurep 'speedbar)
-      (speedbar-add-supported-extension ".ast")
-    (add-hook 'speedbar-load-hook
-              (lambda () (speedbar-add-supported-extension ".ast"))))
-  )
+  (imenu-add-menubar-index))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.ast\\'" . jastadd-ast-mode) t)
+
+;;;###autoload
+(with-eval-after-load 'speedbar
+  (speedbar-add-supported-extension ".ast"))
 
 (provide 'jastadd-ast-mode)
 
